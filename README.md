@@ -42,9 +42,9 @@ NeuroVault is a privacy-preserving, collaborative AI-powered knowledge managemen
 
 ## 📸 Screenshots
 
-|                                   Landing Page                                    |                                   Admin Dashboard                                   |
-| :-------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------: |
-| ![Landing Page](https://via.placeholder.com/800x450?text=NeuroVault+Landing+Page) | ![Admin Dashboard](https://via.placeholder.com/800x450?text=NeuroVault+Admin+Panel) |
+|                       Landing Page                        |                                   Admin Dashboard                                   |
+| :-------------------------------------------------------: | :---------------------------------------------------------------------------------: |
+| ![Landing Page](./frontend/src/assets/readme/landing.png) | ![Admin Dashboard](https://via.placeholder.com/800x450?text=NeuroVault+Admin+Panel) |
 
 |                                Chat Interface                                 |                            Workspace Management                             |
 | :---------------------------------------------------------------------------: | :-------------------------------------------------------------------------: |
