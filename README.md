@@ -1,21 +1,18 @@
-## 🌐 Live Demo
-
-Experience the platform in action here:
-**[NeuroVault Live Portal](https://neurovault-xi.vercel.app)** _(Note: Requires a desktop browser for the best experience)_
-
 # NeuroVault: Collaborative AI Knowledge Hub
 
-NeuroVault is a privacy-preserving, collaborative AI-powered knowledge management platform that allows organizations to transform their private PDF collections into an intelligent, queryable knowledge base. Unlike cloud-based AI tools, NeuroVault operates entirely on local infrastructure, ensuring complete data sovereignty for sensitive organizational information.
+> **Live Demo:** [neurovault-xi.vercel.app](https://neurovault-xi.vercel.app) 🚀
+
+NeuroVault is a privacy-preserving, collaborative AI-powered knowledge management platform that allows organizations to transform their private document collections—including **PDF, CSV, TXT, DOC, DOCX, and PPTX**—into an intelligent, queryable knowledge base. Unlike cloud-based AI tools, NeuroVault operates entirely on local infrastructure, ensuring complete data sovereignty for sensitive organizational information.
 
 ## 🚀 Key Features
 
-- **Local RAG Pipeline:** Leverages Retrieval-Augmented Generation (RAG) to provide precise answers grounded solely in your organization's documents.
+- **Local RAG Pipeline:** Leverages Retrieval-Augmented Generation (RAG) to provide precise answers grounded solely in your organization's uploaded documents.
 - **Privacy First:** All AI processing and data storage happen on your own server. No data is ever sent to third-party APIs (like OpenAI or Google).
+- **Multi-Format Support:** Seamlessly process and query information from **PDF, CSV, TXT, Word (DOC/DOCX), and PowerPoint (PPTX)** files.
 - **Collaborative Workspaces:** Multi-tenant architecture with isolated workspaces for different departments or organizations.
 - **Admin Approval Workflow:** A structured queue where administrators verify documents before they are indexed into the knowledge base to ensure information quality.
 - **Multilingual Support:** Native support for querying in **English, Hindi, and Punjabi** via a self-hosted translation engine.
-- **Source Attribution:** Every AI-generated response includes exact citations (Document Name & Page Number) to eliminate hallucinations and ensure verifiability.
-- **Trusted Contributors:** Automated tracking of members who consistently provide high-quality, approved documentation.
+- **Source Attribution:** Every AI-generated response includes exact citations (Document Name & Page Number/Section) to eliminate hallucinations.
 - **Analytics Dashboard:** Real-time visualizations of knowledge gaps, query frequency, and member contributions.
 
 ## 🛠️ Technology Stack
@@ -33,7 +30,7 @@ NeuroVault is a privacy-preserving, collaborative AI-powered knowledge managemen
 - **PostgreSQL:** Relational data storage for users, workspaces, and chat history.
 - **Pinecone / ChromaDB:** Vector database for high-speed semantic similarity search.
 - **JWT & bcrypt:** Secure industry-standard authentication and password hashing.
-- **Multer:** Efficient multipart/form-data handling for PDF uploads.
+- **Multer:** Efficient handling for multi-format file uploads.
 
 ### AI Layer (Fully Local)
 
@@ -45,9 +42,9 @@ NeuroVault is a privacy-preserving, collaborative AI-powered knowledge managemen
 
 ## 📸 Screenshots
 
-|                       Landing Page                        |                           Dashboard                           |
-| :-------------------------------------------------------: | :-----------------------------------------------------------: |
-| ![Landing Page](./frontend/src/assets/readme/landing.png) | ![ Dashboard](./frontend/src/assets/readme/dashboard.png) |
+|                       Landing Page                        |                        Dashboard                         |
+| :-------------------------------------------------------: | :------------------------------------------------------: |
+| ![Landing Page](./frontend/src/assets/readme/landing.png) | ![Dashboard](./frontend/src/assets/readme/dashboard.png) |
 
 |                      Chat Interface                      |
 | :------------------------------------------------------: |
@@ -55,9 +52,9 @@ NeuroVault is a privacy-preserving, collaborative AI-powered knowledge managemen
 
 ## 🌐 Live Demo
 
-You can view a live demonstration of the project here: **[Insert Your Live URL Here]**
+Experience the platform in action here: **[NeuroVault Live Portal](https://neurovault-xi.vercel.app)** _(Note: Requires a desktop browser for the best experience)_
 
 ## 🏗️ System Architecture
 
-1. **Document Ingestion:** PDF Upload → Admin Review → Text Extraction (pdf-parse) → Semantic Chunking (LangChain) → Vector Embedding (nomic-embed-text) → Vector DB Storage.
+1. **Document Ingestion:** File Upload (PDF, CSV, TXT, DOCX, PPTX) → Admin Review → Multi-format Text Extraction → Semantic Chunking (LangChain) → Vector Embedding (nomic-embed-text) → Vector DB Storage.
 2. **Query Pipeline:** User Query → Language Detection → Translation (LibreTranslate) → Semantic Retrieval → Contextual Prompting → Local LLM Inference (Phi-3) → Cited Answer.
