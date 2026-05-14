@@ -1,8 +1,11 @@
+## 🌐 Live Demo
+
+Experience the platform in action here:
+**[NeuroVault Live Portal](https://neurovault-xi.vercel.app)** _(Note: Requires a desktop browser for the best experience)_
+
 # NeuroVault: Collaborative AI Knowledge Hub
 
 NeuroVault is a privacy-preserving, collaborative AI-powered knowledge management platform that allows organizations to transform their private PDF collections into an intelligent, queryable knowledge base. Unlike cloud-based AI tools, NeuroVault operates entirely on local infrastructure, ensuring complete data sovereignty for sensitive organizational information.
-
-[Image of NeuroVault Architecture]
 
 ## 🚀 Key Features
 
@@ -42,13 +45,13 @@ NeuroVault is a privacy-preserving, collaborative AI-powered knowledge managemen
 
 ## 📸 Screenshots
 
-|                       Landing Page                        |                                   Admin Dashboard                                   |
-| :-------------------------------------------------------: | :---------------------------------------------------------------------------------: |
-| ![Landing Page](./frontend/src/assets/readme/landing.png) | ![Admin Dashboard](https://via.placeholder.com/800x450?text=NeuroVault+Admin+Panel) |
+|                       Landing Page                        |                           Dashboard                           |
+| :-------------------------------------------------------: | :-----------------------------------------------------------: |
+| ![Landing Page](./frontend/src/assets/readme/landing.png) | ![Admin Dashboard](./frontend/src/assets/readme/dashbord.png) |
 
-|                                Chat Interface                                 |                            Workspace Management                             |
-| :---------------------------------------------------------------------------: | :-------------------------------------------------------------------------: |
-| ![Chat Interface](https://via.placeholder.com/800x450?text=AI+Chat+Interface) | ![Workspace](https://via.placeholder.com/800x450?text=Workspace+Management) |
+|                      Chat Interface                      |
+| :------------------------------------------------------: |
+| ![Chat Interface](./frontend/src/assets/readme/chat.png) |
 
 ## 🌐 Live Demo
 
