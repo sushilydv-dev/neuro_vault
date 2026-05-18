@@ -8,52 +8,70 @@ import { where } from "sequelize";
 export const getDashInfo = async (req, res) => {
   try {
     const { token } = req.body;
+
     if (!token) {
       return res.status(400).json({ message: "No token" });
     }
+
     const data = jwt.verify(token, process.env.JWT_SECRET);
-    const user = await Users.findOne({ where: { id: data.id } });
     const id = data.id;
 
-    const workspaceCount = await Workspaces.count({
-      where: { created_by: id },
-    });
-    const countadmin = await Workspacemembers.count({
-      where: {
-        role: "admin",
-        user_id: id,
-      },
-    });
-    const memberCount = await Workspacemembers.count({
-      where: {
-        role: "member",
-        user_id: id,
-      },
-    });
+    const [
+      user,
+      workspaceCount,
+      countadmin,
+      memberCount,
+      documentCount,
+      documentCountPending,
+      documentCountApproved,
+    ] = await Promise.all([
+      Users.findOne({
+        where: { id },
+        attributes: ["name", "email"],
+      }),
 
-    const documentCount = await Documents.count({
-      where: {
-        uploaded_by: id,
-      },
-    });
-    const documentCountPending = await Documents.count({
-      where: {
-        uploaded_by: id,
-        status: "pending",
-      },
-    });
-    const documentCountApproved = await Documents.count({
-      where: {
-        uploaded_by: id,
-        status: "approoved",
-      },
-    });
-   
-    const name = user.name;
+      Workspaces.count({
+        where: { created_by: id },
+      }),
+
+      Workspacemembers.count({
+        where: {
+          role: "admin",
+          user_id: id,
+        },
+      }),
+
+      Workspacemembers.count({
+        where: {
+          role: "member",
+          user_id: id,
+        },
+      }),
+
+      Documents.count({
+        where: {
+          uploaded_by: id,
+        },
+      }),
+
+      Documents.count({
+        where: {
+          uploaded_by: id,
+          status: "pending",
+        },
+      }),
+
+      Documents.count({
+        where: {
+          uploaded_by: id,
+          status: "approoved",
+        },
+      }),
+    ]);
 
     res.json({
       id: id,
-      name: name,
+      name: user.name,
       workspaceCount: workspaceCount,
       countadmin: countadmin,
       memberCount: memberCount,
@@ -66,7 +84,6 @@ export const getDashInfo = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
-
 export const getWorkspaceData = async (req, res) => {
   try {
     const { token } = req.body;
